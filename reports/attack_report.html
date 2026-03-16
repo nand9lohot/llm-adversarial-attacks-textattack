@@ -1,0 +1,59 @@
+
+    <html>
+    <head>
+        <title>LLM Adversarial Attack Report</title>
+        <style>
+            body { font-family: Arial; margin:40px; }
+            table { border-collapse: collapse; width:100%; }
+            th,td { border:1px solid #ddd; padding:8px; }
+            th { background:#f2f2f2 }
+        </style>
+    </head>
+
+    <body>
+
+    <h1>LLM Adversarial Attack Evaluation</h1>
+
+    <table>
+        <tr>
+            <th>Attack</th>
+            <th>Original Text</th>
+            <th>Adversarial Text</th>
+            <th>Token Differences</th>
+        </tr>
+
+        
+        <tr>
+        <td>deepwordbug</td>
+        <td>This movie is [[fantastic]] and [[inspiring]]</td>
+        <td>This movie is [[fntastic]] and [[inspirAing]]</td>
+        <td>This movie is <span style='color:red'>[[fantastic]]</span> <span style='color:green'>[[fntastic]]</span> and <span style='color:red'>[[inspiring]]</span> <span style='color:green'>[[inspirAing]]</span></td>
+        </tr>
+        
+        <tr>
+        <td>deepwordbug</td>
+        <td>[[The]] plot was [[dull]] and [[poorly]] [[written]]</td>
+        <td>[[he]] plot was [[drll]] and [[gpoorly]] [[Vritten]]</td>
+        <td><span style='color:red'>[[The]]</span> <span style='color:green'>[[he]]</span> plot was <span style='color:red'>[[dull]]</span> <span style='color:green'>[[drll]]</span> and <span style='color:red'>[[poorly]]</span> <span style='color:green'>[[gpoorly]]</span> <span style='color:red'>[[written]]</span> <span style='color:green'>[[Vritten]]</span></td>
+        </tr>
+        
+        <tr>
+        <td>deepwordbug</td>
+        <td>I [[loved]] the cinematography and acting</td>
+        <td>I [[loevd]] the cinematography and acting</td>
+        <td>I <span style='color:red'>[[loved]]</span> <span style='color:green'>[[loevd]]</span> the cinematography and acting</td>
+        </tr>
+        
+        <tr>
+        <td>deepwordbug</td>
+        <td>The film was [[painfully]] [[boring]]</td>
+        <td>The film was [[pianfully]] [[boirng]]</td>
+        <td>The film was <span style='color:red'>[[painfully]]</span> <span style='color:green'>[[pianfully]]</span> <span style='color:red'>[[boring]]</span> <span style='color:green'>[[boirng]]</span></td>
+        </tr>
+        
+
+    </table>
+
+    </body>
+    </html>
+    

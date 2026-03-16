@@ -1,0 +1,42 @@
+name: LLM Adversarial Attack Lab
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  # Scheduled runs are commented out to avoid consuming GitHub Actions minutes
+  # Uncomment the line below to enable daily scans at 2 AM UTC
+  # schedule:
+  #   - cron: '0 2 * * *'
+  
+  # Manual trigger - you can run this workflow manually from GitHub UI
+  workflow_dispatch:
+
+jobs:
+  run-adversarial-lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker Image
+        run: |
+          docker build -t llm-adversarial-attack -f docker/Dockerfile .
+
+      - name: Run Adversarial Attack Lab
+        run: |
+          mkdir -p reports
+          docker run \
+            -v ${{ github.workspace }}/reports:/app/reports \
+            llm-adversarial-attack
+
+      - name: Upload Attack Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: adversarial-attack-reports
+          path: reports/

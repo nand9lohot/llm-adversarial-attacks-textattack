@@ -1,0 +1,5 @@
+"original_text","perturbed_text","original_score","perturbed_score","original_output","perturbed_output","ground_truth_output","num_queries","result_type"
+"This movie is [[fantastic]] and [[inspiring]]","This movie is [[fntastic]] and [[inspirAing]]",0.00010979175567626953,0.998185932636261,1,0,1,12,"Successful"
+"[[The]] plot was [[dull]] and [[poorly]] [[written]]","[[he]] plot was [[drll]] and [[gpoorly]] [[Vritten]]",0.00018292665481567383,0.006591320037841797,0,0,0,24,"Failed"
+"I [[loved]] the cinematography and acting","I [[loevd]] the cinematography and acting",0.00013744831085205078,0.9954188466072083,1,0,1,9,"Successful"
+"The film was [[painfully]] [[boring]]","The film was [[pianfully]] [[boirng]]",0.00018674135208129883,0.9617266058921814,0,1,0,21,"Successful"

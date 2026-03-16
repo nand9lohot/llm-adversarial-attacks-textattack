@@ -1,0 +1,14 @@
+torch==2.2.2
+transformers==4.39.3
+datasets==2.18.0
+textattack==0.3.10
+nltk==3.8.1
+scikit-learn==1.4.2
+pandas==2.2.1
+tqdm==4.66.2
+sentencepiece==0.2.0
+
+# Required for TextAttack semantic similarity constraints
+tensorflow==2.15.0
+tensorflow-hub==0.16.1
+tensorflow-text==2.15.0
